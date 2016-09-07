@@ -14,8 +14,8 @@ namespace Leap.Unity
         private BlockGetter rightHandState;
         [SerializeField]
         private BlockGetter leftHandState;
-        private Quaternion rightRotation;
-        private Quaternion leftRotation;
+        //private Quaternion rightRotation;
+        //private Quaternion leftRotation;
         private PinchDetector pinchDetectorRight;
         private PinchDetector pinchDetectorLeft;
         private BlockState blockState;
@@ -32,9 +32,11 @@ namespace Leap.Unity
 
             pinchDetectorLeft = leftHand.GetComponent<PinchDetector>();
 
+            /*
             rightRotation = rightHand.transform.rotation;
 
             leftRotation = leftHand.transform.rotation;
+            */
         }
 
         void Update()
@@ -77,7 +79,7 @@ namespace Leap.Unity
                 {
                     if(rightState != null)
                     {
-                        Quaternion newRightRotation = rightHand.transform.rotation;
+                        //Quaternion newRightRotation = rightHand.transform.rotation;
 
                         blockState.gameObject.transform.position = rightHand.transform.position;
 
@@ -88,7 +90,7 @@ namespace Leap.Unity
                 {
                     if (leftState != null)
                     {
-                        Quaternion newLeftRotation = leftHand.transform.rotation;
+                        //Quaternion newLeftRotation = leftHand.transform.rotation;
 
                         blockState.gameObject.transform.position = leftHand.transform.position;
 
@@ -99,9 +101,11 @@ namespace Leap.Unity
 
             distance = newDistance;
 
+            /*
             rightRotation = rightHand.transform.rotation;
 
             leftRotation = leftHand.transform.rotation;
+            */
         }
 
         IEnumerator WaitForRightHand()
